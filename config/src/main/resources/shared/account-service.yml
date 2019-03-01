@@ -10,16 +10,11 @@ security:
 spring:
   data:
     mongodb:
-      host: account-mongodb
-      username: user
-      password: ${MONGODB_PASSWORD}
-      database: piggymetrics
-      port: 27017
+      uri: mongodb://user:pwd@localhost:26000/piggymetrics
 
 server:
   servlet:
     context-path: /accounts
-  port: 6000
 
 feign:
   hystrix:

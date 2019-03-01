@@ -1,3 +1,11 @@
-eureka:
-  client:
-    enabled: false
+spring:
+  application:
+    name: auth-service
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config
+      failFast: true
+      password: ${CONFIG_SERVICE_PASSWORD}
+      username: user

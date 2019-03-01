@@ -3,7 +3,9 @@ spring:
     name: auth-service
   cloud:
     config:
-      uri: http://config:8888
-      fail-fast: true
+      discovery:
+        enabled: true
+        service-id: config
+      failFast: true
       password: ${CONFIG_SERVICE_PASSWORD}
       username: user

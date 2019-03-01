@@ -10,7 +10,6 @@ security:
 server:
   servlet:
     context-path: /notifications
-  port: 8000
 
 remind:
   cron: 0 0 0 * * *
@@ -28,11 +27,8 @@ backup:
 spring:
   data:
     mongodb:
-      host: notification-mongodb
-      username: user
-      password: ${MONGODB_PASSWORD}
-      database: piggymetrics
-      port: 27017
+      uri: mongodb://user:pwd@localhost:28000/piggymetrics
+
   mail:
     host: smtp.gmail.com
     port: 465

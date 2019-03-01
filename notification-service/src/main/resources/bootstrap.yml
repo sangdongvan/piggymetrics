@@ -2,8 +2,13 @@ spring:
   application:
     name: notification-service
   cloud:
+    consul:
+      host: localhost
+      port: 8500
     config:
-      uri: http://config:8888
-      fail-fast: true
+      discovery:
+        enabled: true
+        service-id: config
+      failFast: true # IMPORTANT new spring cloud config version may need "fail-fast" instead 
       password: ${CONFIG_SERVICE_PASSWORD}
       username: user
