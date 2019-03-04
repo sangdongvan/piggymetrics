@@ -9,6 +9,6 @@ spring:
       discovery:
         enabled: true
         service-id: config
-      failFast: true # IMPORTANT new spring cloud config version may need "fail-fast" instead 
+      fast-fast: true
       password: ${CONFIG_SERVICE_PASSWORD}
       username: user

@@ -1,9 +1,7 @@
 server:
   port: 0
 
-logging:
-  level:
-    org.springframework.security: INFO
+management:  endpoints:    web:      exposure:        include: info,metrics,health
 
 hystrix:
   command:
@@ -20,9 +18,10 @@ security:
 
 spring:
   rabbitmq:
-    host: rabbitmq
+    host: localhost
 
-management:
-  endpoint:
-    mappings:
-      enabled: true
+logging:
+  level:
+    org.springframework.security: INFO
+  pattern:
+    console: "%clr(${LOG_LEVEL_PATTERN:%5p}) %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n"

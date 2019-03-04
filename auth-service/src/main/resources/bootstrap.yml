@@ -6,6 +6,6 @@ spring:
       discovery:
         enabled: true
         service-id: config
-      failFast: true
+      fail-fast: true
       password: ${CONFIG_SERVICE_PASSWORD}
       username: user

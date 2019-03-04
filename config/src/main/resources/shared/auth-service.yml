@@ -1,7 +1,7 @@
 spring:
   data:
     mongodb:
-      uri: mongodb://user:pwd@localhost:25000/piggymetrics
+      uri: mongodb://user:pwd@localhost:27000/piggymetrics
 
 server:
   servlet:
