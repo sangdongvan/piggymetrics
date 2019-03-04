@@ -1,7 +1,11 @@
 server:
   port: 0
 
-management:  endpoints:    web:      exposure:        include: info,metrics,health
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info,metrics,health
 
 hystrix:
   command:
@@ -14,7 +18,7 @@ hystrix:
 security:
   oauth2:
     resource:
-      user-info-uri: http://auth-service/uaa/users/current
+      user-info-uri: http://auth-service/users/current
 
 spring:
   rabbitmq:
