@@ -1,6 +1,12 @@
 server:
   port: 0
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info,metrics,health
+
 spring:
   application:
     name: config
@@ -14,7 +20,7 @@ spring:
   security:
     user:
       password: ${CONFIG_SERVICE_PASSWORD}
-      
+
 logging:
   pattern:
     console: "%clr(${LOG_LEVEL_PATTERN:%5p}) %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n"
