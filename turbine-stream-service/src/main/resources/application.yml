@@ -1,0 +1,5 @@
+turbine: 
+  aggregator: 
+    cluster-config: 
+    - piggymetrics 
+  app-config: piggymetrics
