@@ -1,6 +1,10 @@
 server:
   port: 0
 
+spring:
+  rabbitmq:
+    host: localhost
+
 management:
   endpoints:
     web:
@@ -19,10 +23,6 @@ security:
   oauth2:
     resource:
       user-info-uri: http://auth-service/users/current
-
-spring:
-  rabbitmq:
-    host: localhost
 
 logging:
   level:

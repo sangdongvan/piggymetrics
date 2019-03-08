@@ -2,8 +2,14 @@ spring:
   application:
     name: statistics-service
   cloud:
+    consul:
+      host: consul-server
+      port: 8500
+      discovery:
+        prefer-ip-address: true
     config:
-      discovery:        enabled: true
+      discovery:
+        enabled: true
         service-id: config
       fail-fast: true
       password: ${CONFIG_SERVICE_PASSWORD}
