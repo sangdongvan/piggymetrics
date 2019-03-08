@@ -2,6 +2,11 @@ spring:
   application:
     name: monitoring
   cloud:
+    consul:
+      host: consul-server
+      port: 8500
+      discovery:
+        prefer-ip-address: true
     config:
       discovery:
         enabled: true

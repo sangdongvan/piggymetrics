@@ -8,8 +8,6 @@ management:
         include: info,metrics,health
 
 spring:
-  application:
-    name: config
   cloud:
     config:
       server:
