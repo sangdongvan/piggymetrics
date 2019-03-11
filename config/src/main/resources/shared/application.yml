@@ -9,7 +9,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: info,metrics,health
+        include: "*"
 
 hystrix:
   command:
@@ -22,7 +22,7 @@ hystrix:
 security:
   oauth2:
     resource:
-      user-info-uri: http://auth-service/users/current
+      user-info-uri: http://localhost:18001/uaa/users/current
 
 logging:
   level:

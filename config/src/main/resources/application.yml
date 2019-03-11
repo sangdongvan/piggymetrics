@@ -5,7 +5,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: info,metrics,health
+        include: "*"
 
 spring:
   cloud:

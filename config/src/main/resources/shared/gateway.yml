@@ -1,3 +1,6 @@
+server:
+  port: 18001
+
 hystrix:
   command:
     default:
@@ -18,25 +21,25 @@ zuul:
 
   routes:
     auth-service:
-        path: /uaa/**
-        serviceId: auth-service
-        stripPrefix: true
-        sensitiveHeaders:
+      path: /uaa/**
+      serviceId: auth-service
+      stripPrefix: true
+      sensitiveHeaders:
 
     account-service:
-        path: /accounts/**
-        serviceId: account-service
-        stripPrefix: true
-        sensitiveHeaders:
+      path: /accounts/**
+      serviceId: account-service
+      stripPrefix: true
+      sensitiveHeaders:
 
     statistics-service:
-        path: /statistics/**
-        serviceId: statistics-service
-        stripPrefix: true
-        sensitiveHeaders:
+      path: /statistics/**
+      serviceId: statistics-service
+      stripPrefix: true
+      sensitiveHeaders:
 
-    notification-service:
-        path: /notifications/**
-        serviceId: notification-service
-        stripPrefix: true
-        sensitiveHeaders:
+  notification-service:
+      path: /notifications/**
+      serviceId: notification-service
+      stripPrefix: true
+      sensitiveHeaders:
