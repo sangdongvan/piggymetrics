@@ -9,6 +9,11 @@ management:
 
 spring:
   cloud:
+    consul:
+      discovery:
+        # Making the Consul Instance ID Unique
+        # @see: https://cloud.spring.io/spring-cloud-consul/multi/multi_spring-cloud-consul-discovery.html#_making_the_consul_instance_id_unique
+        instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
     config:
       server:
         native:
