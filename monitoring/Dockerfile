@@ -1,7 +1,8 @@
-FROM java:8-jre
+FROM openjdk:8-alpine
 MAINTAINER Alexander Lukyanchikov <sqshq@sqshq.com>
 
-ADD ./target/monitoring.jar /app/
-CMD ["java", "-Xmx200m", "-jar", "/app/monitoring.jar"]
+ENTRYPOINT ["/usr/bin/java", "-jar", "/code/app.jar"]
 
-EXPOSE 8080
+# Add app itself
+ARG JAR_FILE
+ADD target/${JAR_FILE} /code/app.jar

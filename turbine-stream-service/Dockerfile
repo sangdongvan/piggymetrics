@@ -1,7 +1,8 @@
-FROM java:8-jre
-MAINTAINER Chi Dov <d.chiproeng@gmail.com>
+FROM openjdk:8-alpine
+MAINTAINER Alexander Lukyanchikov <sqshq@sqshq.com>
 
-ADD ./target/turbine-stream-service.jar /app/
-CMD ["java", "-Xmx200m", "-jar", "/app/turbine-stream-service.jar"]
+ENTRYPOINT ["/usr/bin/java", "-jar", "/code/app.jar"]
 
-EXPOSE 8989
+# Add app itself
+ARG JAR_FILE
+ADD target/${JAR_FILE} /code/app.jar

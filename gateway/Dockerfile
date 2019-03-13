@@ -1,7 +1,8 @@
-FROM java:8-jre
+FROM openjdk:8-alpine
 MAINTAINER Alexander Lukyanchikov <sqshq@sqshq.com>
 
-ADD ./target/gateway.jar /app/
-CMD ["java", "-Xmx200m", "-jar", "/app/gateway.jar"]
+ENTRYPOINT ["/usr/bin/java", "-jar", "/code/app.jar"]
 
-EXPOSE 4000
+# Add app itself
+ARG JAR_FILE
+ADD target/${JAR_FILE} /code/app.jar

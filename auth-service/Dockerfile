@@ -1,5 +1,8 @@
-FROM java:8-jre
+FROM openjdk:8-alpine
 MAINTAINER Alexander Lukyanchikov <sqshq@sqshq.com>
 
-ADD ./target/auth-service.jar /app/
-CMD ["java", "-Xmx200m", "-jar", "/app/auth-service.jar"]
+ENTRYPOINT ["/usr/bin/java", "-jar", "/code/app.jar"]
+
+# Add app itself
+ARG JAR_FILE
+ADD target/${JAR_FILE} /code/app.jar
